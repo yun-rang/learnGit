@@ -1,0 +1,41 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: demo2
+  datasource:
+    url: jdbc:mysql://localhost:3306/sky_take_out
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+  mvc:
+    path match:
+      matching-strategy: ant_path_matcher
+
+mybatis-plus:
+  #  xml??
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.example.demo.entity
+
+
+#logging:
+#  level:
+#    root: warn
+#    com.example.demo.mappers: trace
+#  pattern:
+#    console: '%p%m%n'
+
+#swagger
+#springfox:
+#  documentation:
+#    swagger-ui:
+#      base-url: /ui.html
+springdoc:
+  api-docs:
+    path: /swagger
+    enabled: true
+  swagger-ui:
+    path: /swagger
